@@ -1,0 +1,10 @@
+Private Sub cmdExportExcel_Click()
+    Dim msgValue As VbMsgBoxResult
+    
+    msgValue = MsgBox("Do you want to export this sheet?", vbYesNo + vbQuestion, "Export")
+    
+    If msgValue = vbYes Then
+        Call Export
+    End If
+    
+End Sub

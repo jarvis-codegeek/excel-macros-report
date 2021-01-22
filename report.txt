@@ -1,0 +1,309 @@
+'MsgBox ("Welcome Shree Ganesh")
+Option Explicit
+Function Validate() As Boolean
+
+Dim inputFrm As Worksheet
+
+Set inputFrm = ThisWorkbook.Sheets("InputForms")
+
+Validate = True
+
+With inputFrm
+    .Range("G4").Interior.Color = xlNone
+    .Range("G9").Interior.Color = xlNone
+    .Range("G11").Interior.Color = xlNone
+    .Range("G13").Interior.Color = xlNone
+    .Range("G25").Interior.Color = xlNone
+    .Range("G27").Interior.Color = xlNone
+    .Range("G29").Interior.Color = xlNone
+    .Range("G31").Interior.Color = xlNone
+    .Range("P9").Interior.Color = xlNone
+    .Range("P11").Interior.Color = xlNone
+    .Range("P13").Interior.Color = xlNone
+    .Range("P15").Interior.Color = xlNone
+    .Range("P17").Interior.Color = xlNone
+    .Range("P19").Interior.Color = xlNone
+    .Range("P25").Interior.Color = xlNone
+    .Range("P27").Interior.Color = xlNone
+    .Range("P29").Interior.Color = xlNone
+    
+End With
+
+'Validating empty fields
+
+If Trim(inputFrm.Range("G4").Value) = "" Or Not IsDate(inputFrm.Range("G4").Value) Then
+    MsgBox "Date field cannot be blank.", vbOKOnly + vbInformation, "Date"
+    inputFrm.Range("G4").Select
+    inputFrm.Range("G4").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("G9").Value) = "" Or Not IsNumeric(inputFrm.Range("G9").Value) Then
+    MsgBox "CPaaS Availability field value should be number or cannot be blank.", vbOKOnly + vbInformation, "CPaaS Availability"
+    inputFrm.Range("G9").Select
+    inputFrm.Range("G9").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+
+If Trim(inputFrm.Range("G11").Value) = "" Or Not IsNumeric(inputFrm.Range("G11").Value) Then
+    MsgBox "MongoDB Availability field value should be number or cannot be blank.", vbOKOnly + vbInformation, "MongoDB Availability"
+    inputFrm.Range("G11").Select
+    inputFrm.Range("G11").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("G13").Value) = "" Or Not IsNumeric(inputFrm.Range("G13").Value) Then
+    MsgBox "Oracle Availability field value should be number or cannot be blank.", vbOKOnly + vbInformation, "Oracle Availability"
+    inputFrm.Range("G13").Select
+    inputFrm.Range("G13").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("G25").Value) = "" Or Not IsNumeric(inputFrm.Range("G25").Value) Then
+    MsgBox "Incidents field value should be number or cannot be blank.", vbOKOnly + vbInformation, "Incidents"
+    inputFrm.Range("G25").Select
+    inputFrm.Range("G25").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("G27").Value) = "" Or Not IsNumeric(inputFrm.Range("G27").Value) Then
+    MsgBox "Requests field field value should be number or cannot be blank.", vbOKOnly + vbInformation, "Requests"
+    inputFrm.Range("G27").Select
+    inputFrm.Range("G27").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("G29").Value) = "" Or Not IsNumeric(inputFrm.Range("G29").Value) Then
+    MsgBox "Change Records field value should be number or cannot be blank.", vbOKOnly + vbInformation, "Change Records"
+    inputFrm.Range("G29").Select
+    inputFrm.Range("G29").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("G31").Value) = "" Or Not IsNumeric(inputFrm.Range("G31").Value) Then
+    MsgBox "Problem Records field value should be number or cannot be blank.", vbOKOnly + vbInformation, "Problem Records"
+    inputFrm.Range("G31").Select
+    inputFrm.Range("G31").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("P9").Value) = "" Or Not IsNumeric(inputFrm.Range("P9").Value) Then
+    MsgBox "CPaaS CPU field value should be number or cannot be blank.", vbOKOnly + vbInformation, "CPaaS CPU"
+    inputFrm.Range("P9").Select
+    inputFrm.Range("P9").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("P11").Value) = "" Or Not IsNumeric(inputFrm.Range("P11").Value) Then
+    MsgBox "CPaaS Memory field value should be number or cannot be blank.", vbOKOnly + vbInformation, "CPaaS Memory"
+    inputFrm.Range("P11").Select
+    inputFrm.Range("P11").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("P13").Value) = "" Or Not IsNumeric(inputFrm.Range("P13").Value) Then
+    MsgBox "MongoDB CPU field value should be number or cannot be blank.", vbOKOnly + vbInformation, "MongoDB CPU"
+    inputFrm.Range("P13").Select
+    inputFrm.Range("P13").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("P15").Value) = "" Or Not IsNumeric(inputFrm.Range("P15").Value) Then
+    MsgBox "MongoDB Memory field value should be number or cannot be blank.", vbOKOnly + vbInformation, "MongoDB Memory"
+    inputFrm.Range("P15").Select
+    inputFrm.Range("P15").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("P17").Value) = "" Or Not IsNumeric(inputFrm.Range("P17").Value) Then
+    MsgBox "Oracle CPU field value should be number or cannot be blank.", vbOKOnly + vbInformation, "Oracle CPU"
+    inputFrm.Range("P17").Select
+    inputFrm.Range("P17").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("P19").Value) = "" Or Not IsNumeric(inputFrm.Range("P19").Value) Then
+    MsgBox "Oracle Memory field value should be number or cannot be blank.", vbOKOnly + vbInformation, "Oracle Memory"
+    inputFrm.Range("P19").Select
+    inputFrm.Range("P19").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("P25").Value) <> "Success" And Trim(inputFrm.Range("P25").Value) <> "Failure" Then
+    MsgBox "Please enter valid status in CPaaS field at Backup Status section", vbOKOnly + vbInformation, "CPaaS"
+    inputFrm.Range("P25").Select
+    inputFrm.Range("P25").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("P27").Value) <> "Success" And Trim(inputFrm.Range("P27").Value) <> "Failure" Then
+    MsgBox "Please enter valid status in Oracle field at Backup Status section", vbOKOnly + vbInformation, "Oracle"
+    inputFrm.Range("P27").Select
+    inputFrm.Range("P27").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+
+If Trim(inputFrm.Range("P29").Value) <> "Success" And Trim(inputFrm.Range("P29").Value) <> "Failure" Then
+    MsgBox "Please enter valid status in MongoDB field at Backup Status section", vbOKOnly + vbInformation, "MongoDB"
+    inputFrm.Range("P29").Select
+    inputFrm.Range("P29").Interior.Color = vbRed
+    Validate = False
+Exit Function
+End If
+    
+End Function
+
+Sub Reset()
+    With Sheets("InputForms")
+    
+    .Range("G4").Interior.Color = xlNone
+    .Range("G4").Value = ""
+    
+    .Range("G9").Interior.Color = xlNone
+    .Range("G9").Value = ""
+    
+    .Range("G11").Interior.Color = xlNone
+    .Range("G11").Value = ""
+    
+    .Range("G13").Interior.Color = xlNone
+    .Range("G13").Value = ""
+    
+    .Range("G25").Interior.Color = xlNone
+    .Range("G25").Value = ""
+    
+    .Range("G27").Interior.Color = xlNone
+    .Range("G27").Value = ""
+    
+    .Range("G29").Interior.Color = xlNone
+    .Range("G29").Value = ""
+    
+    .Range("G31").Interior.Color = xlNone
+    .Range("G31").Value = ""
+    
+    .Range("P9").Interior.Color = xlNone
+    .Range("P9").Value = ""
+    
+    .Range("P11").Interior.Color = xlNone
+    .Range("P11").Value = ""
+    
+    .Range("P13").Interior.Color = xlNone
+    .Range("P13").Value = ""
+    
+    .Range("P15").Interior.Color = xlNone
+    .Range("P15").Value = ""
+    
+    .Range("P17").Interior.Color = xlNone
+    .Range("P17").Value = ""
+    
+    .Range("P19").Interior.Color = xlNone
+    .Range("P19").Value = ""
+    
+    .Range("P25").Interior.Color = xlNone
+    .Range("P25").Value = ""
+    
+    .Range("P27").Interior.Color = xlNone
+    .Range("P27").Value = ""
+    
+    .Range("P29").Interior.Color = xlNone
+    .Range("P29").Value = ""
+    
+    End With
+    
+End Sub
+
+Sub Save()
+
+Dim inputFrm As Worksheet
+Dim database As Worksheet
+
+
+Dim iRow As Long
+Dim averageAvailability As Integer
+Dim nonAvailability As Integer
+
+
+Set inputFrm = ThisWorkbook.Sheets("InputForms")
+Set database = ThisWorkbook.Sheets("Database")
+
+If Trim(inputFrm.Range("R1").Value) = "" Then
+    iRow = database.Range("A" & Application.Rows.Count).End(xlUp).Row + 1
+Else
+    iRow = inputFrm.Range("R1").Value
+End If
+
+averageAvailability = WorksheetFunction.Average(inputFrm.Range("G9").Value, inputFrm.Range("G11").Value, inputFrm.Range("G13").Value)
+nonAvailability = 100 - averageAvailability
+
+With database
+    .Cells(iRow, 1).Value = inputFrm.Range("G4").Value
+    .Cells(iRow, 2).Value = inputFrm.Range("G9").Value + "%"
+    .Cells(iRow, 3).Value = inputFrm.Range("G11").Value + "%"
+    .Cells(iRow, 4).Value = inputFrm.Range("G13").Value + "%"
+    .Cells(iRow, 5).Value = averageAvailability & "%"
+    .Cells(iRow, 6).Value = nonAvailability & "%"
+    .Cells(iRow, 7).Value = inputFrm.Range("P9").Value + "%"
+    .Cells(iRow, 8).Value = inputFrm.Range("P11").Value + "%"
+    .Cells(iRow, 9).Value = inputFrm.Range("P13").Value + "%"
+    .Cells(iRow, 10).Value = inputFrm.Range("P15").Value + "%"
+    .Cells(iRow, 11).Value = inputFrm.Range("P17").Value + "%"
+    .Cells(iRow, 12).Value = inputFrm.Range("P19").Value + "%"
+    .Cells(iRow, 13).Value = inputFrm.Range("G25").Value
+    .Cells(iRow, 14).Value = inputFrm.Range("G27").Value
+    .Cells(iRow, 15).Value = inputFrm.Range("G29").Value
+    .Cells(iRow, 16).Value = inputFrm.Range("G31").Value
+    .Cells(iRow, 17).Value = inputFrm.Range("P25").Value
+    .Cells(iRow, 18).Value = inputFrm.Range("P27").Value
+    .Cells(iRow, 19).Value = inputFrm.Range("P29").Value
+
+End With
+    inputFrm.Range("R1").Value = ""
+    inputFrm.Range("S1").Value = ""
+    MsgBox "Data saved successfully.", vbOKOnly, "Successful"
+    database.Select
+End Sub
+
+Sub Export()
+
+Dim MyPath As String
+Dim MyFileName As String
+
+MyFileName = "Database" & "_" & Format(Now(), "yyyy-mm-dd_hh_mm_ss_AM/PM")
+
+If Not Right(MyFileName, 4) = ".xlsx" Then MyFileName = MyFileName & ".xlsx"
+
+Sheets("Database").Copy
+
+ActiveSheet.Shapes("cmdExportExcel").Delete
+
+With Application.FileDialog(msoFileDialogFolderPicker)
+    .Title = "Select a Folder"
+    .AllowMultiSelect = False
+    .InitialFileName = ""
+    If .Show <> -1 Then GoTo NextCode
+    MyPath = .SelectedItems(1) & "\"
+End With
+
+NextCode:
+
+With ActiveWorkbook
+    .SaveAs Filename:=MyPath & MyFileName, FileFormat:=xlWorkbookDefault, CreateBackup:=False
+    .Close False
+End With
+End Sub
