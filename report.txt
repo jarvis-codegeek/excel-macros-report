@@ -307,3 +307,22 @@ With ActiveWorkbook
     .Close False
 End With
 End Sub
+
+
+Dim r As Range
+Set r = Range("B2:D5")
+r.Copy
+
+'Open a new mail item
+Dim outlookApp As Outlook.Application
+Set outlookApp = CreateObject("Outlook.Application")
+Dim outMail As Outlook.MailItem
+Set outMail = outlookApp.CreateItem(olMailItem)
+
+'Get its Word editor
+outMail.Display
+Dim wordDoc As Word.Document
+Set wordDoc = outMail.GetInspector.WordEditor
+
+'To paste as picture
+wordDoc.Range.PasteAndFormat wdChartPicture
